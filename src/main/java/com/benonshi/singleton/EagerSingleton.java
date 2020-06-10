@@ -1,9 +1,5 @@
 package com.benonshi.singleton;
 
-import lombok.SneakyThrows;
-
-import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
 
 /**
  * @author BenOniShi
