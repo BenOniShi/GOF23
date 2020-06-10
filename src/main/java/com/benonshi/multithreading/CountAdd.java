@@ -13,6 +13,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class CountAdd {
 
     static final LongAdder longAdder = new LongAdder();
+
     private Lock lock = new ReentrantLock();
 
     private volatile static int count = 0;

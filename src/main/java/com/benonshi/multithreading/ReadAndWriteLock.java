@@ -15,9 +15,9 @@ public class ReadAndWriteLock {
     static Lock lock = new ReentrantLock();
 
     static ReadWriteLock readWriteLock = new ReentrantReadWriteLock();
-    //
+    //读锁 多个线程可以同时占有读模式的读写锁
     static Lock readLock = readWriteLock.readLock();
-    //互斥锁
+    //写锁 一次只可以有一个线程占有写模式的读写锁
     static Lock writeLock = readWriteLock.writeLock();
 
 
