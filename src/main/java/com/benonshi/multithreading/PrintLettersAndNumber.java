@@ -2,7 +2,6 @@ package com.benonshi.multithreading;
 
 import lombok.SneakyThrows;
 
-import java.util.ArrayList;
 
 /**
  * @author BenOniShi
@@ -19,16 +18,12 @@ public class PrintLettersAndNumber {
         Thread numberThread = new Thread(number);
         lettersThread.start();
         numberThread.start();
-
     }
-
-
 }
 
 class Letters implements Runnable {
 
     private Share share;
-
     public Letters(Share share) {
         this.share = share;
     }
@@ -36,7 +31,6 @@ class Letters implements Runnable {
     @SneakyThrows
     @Override
     public void run() {
-
         for (int i = 0; i < 52; i++) {
             synchronized (share) {
                 if (0 == i % 2) {

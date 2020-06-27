@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+
 /**
  * @author BenOniShi
  * @date 2020/6/8 23:45
@@ -33,11 +34,9 @@ public class Visibility {
 
     }
 
-
     public static void main(String[] args) {
         Visibility visibility = new Visibility();
         new Thread(visibility::stateRun).start();
-
         visibility.state = false;
     }
 
