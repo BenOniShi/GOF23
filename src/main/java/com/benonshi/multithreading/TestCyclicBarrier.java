@@ -33,9 +33,7 @@ public class TestCyclicBarrier {
             new Thread(() -> {
                 try {
                     cyclicBarrierWait.await();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } catch (BrokenBarrierException e) {
+                } catch (InterruptedException | BrokenBarrierException e) {
                     e.printStackTrace();
                 }
             }).start();
@@ -46,19 +44,20 @@ public class TestCyclicBarrier {
          * timeout timeout the time to wait for the barrier  超时等待的时间
          * unit the time unit of the timeout parameter   时间单位
          */
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 10; i++) {
             new Thread(() -> {
                 try {
                     cyclicBarrierWaitSecond.await(1, TimeUnit.SECONDS);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } catch (BrokenBarrierException e) {
-                    e.printStackTrace();
-                } catch (TimeoutException e) {
-                    e.printStackTrace();
+                } catch (InterruptedException | BrokenBarrierException | TimeoutException e) {
                 }
             }).start();
         }
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(cyclicBarrierWaitSecond.isBroken());
     }
 
 
