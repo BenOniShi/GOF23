@@ -6,7 +6,7 @@ package com.benonshi.strategy;
  * @date 2020/7/7 21:35
  */
 public class Dog implements Comparable<Dog>{
-    private int weight;
+    public int weight;
 
     public Dog(int weight) {
         this.weight = weight;
