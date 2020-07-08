@@ -8,6 +8,6 @@ public class Client {
 
     public static void main(String[] args) {
         ChangeDirectorAirShip changeDirectorAirShip = new ChangeDirectorAirShip(new ChangeAirShipBuilder());
-        changeDirectorAirShip.directorAirShip();
+        AirShip airShip = changeDirectorAirShip.directorAirShip();
     }
 }
