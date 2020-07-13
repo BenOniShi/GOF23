@@ -14,13 +14,6 @@ public class ChangeDirectorAirShip implements DirectorAirShip {
 
     @Override
     public AirShip directorAirShip() {
-        Engine engine = builder.builderEngine();
-        EscapeTower escapeTower = builder.builderEscapeTower();
-        OrbitalModule orbitalModule = builder.builderOrbitalModule();
-        AirShip airShip = new AirShip();
-        airShip.setEngine(engine);
-        airShip.setEscapeTower(escapeTower);
-        airShip.setOrbitalModule(orbitalModule);
-        return airShip;
+        return builder.build();
     }
 }

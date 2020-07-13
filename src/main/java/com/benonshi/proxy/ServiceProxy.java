@@ -38,6 +38,10 @@ public class ServiceProxy implements InvocationHandler {
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         Object returnValue = null;
         if (this.connect()) {
+            Class<?>[] interfaces = proxy.getClass().getInterfaces();
+            for (Class<?> anInterface : interfaces) {
+                System.out.println(anInterface.getSimpleName());
+            }
             returnValue = method.invoke(this.target, args);
             this.transaction();
             this.close();

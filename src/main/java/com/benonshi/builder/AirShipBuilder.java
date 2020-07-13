@@ -10,5 +10,7 @@ public interface AirShipBuilder {
     OrbitalModule builderOrbitalModule();
 
     EscapeTower builderEscapeTower();
-    
+
+    AirShip build();
+
 }

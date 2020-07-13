@@ -7,7 +7,7 @@ package com.benonshi.builder;
 public class Client {
 
     public static void main(String[] args) {
-        ChangeDirectorAirShip changeDirectorAirShip = new ChangeDirectorAirShip(new ChangeAirShipBuilder());
+        DirectorAirShip changeDirectorAirShip = new ChangeDirectorAirShip(new ChangeAirShipBuilder());
         AirShip airShip = changeDirectorAirShip.directorAirShip();
     }
 }

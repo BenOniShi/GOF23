@@ -22,4 +22,16 @@ public class ChangeAirShipBuilder implements AirShipBuilder {
         System.out.println("构建逃逸仓");
         return new EscapeTower("嫦娥逃逸仓");
     }
+
+    @Override
+    public AirShip build() {
+        Engine engine = this.builderEngine();
+        EscapeTower escapeTower = this.builderEscapeTower();
+        OrbitalModule orbitalModule = this.builderOrbitalModule();
+        AirShip airShip = new AirShip();
+        airShip.setEngine(engine);
+        airShip.setOrbitalModule(orbitalModule);
+        airShip.setEscapeTower(escapeTower);
+        return airShip;
+    }
 }

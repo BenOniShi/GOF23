@@ -7,6 +7,6 @@ package com.benonshi.proxy;
 public class MemberTest {
 
     public static void main(String[] args) {
-        MemberFactory.getInstance().add();
+        System.out.println(MemberFactory.getInstance().delete());
     }
 }

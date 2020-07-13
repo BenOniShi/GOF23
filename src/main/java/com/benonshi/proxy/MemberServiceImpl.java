@@ -9,4 +9,9 @@ public class MemberServiceImpl implements IMemberService {
     public void add() {
         System.out.println("【业务对象】数据库调用add方法");
     }
+
+    @Override
+    public int delete() {
+        return 0;
+    }
 }

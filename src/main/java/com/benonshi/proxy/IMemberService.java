@@ -6,4 +6,6 @@ package com.benonshi.proxy;
  */
 public interface IMemberService {
     void add();
+
+    int delete();
 }
