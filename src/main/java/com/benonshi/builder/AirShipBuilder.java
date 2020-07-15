@@ -5,11 +5,12 @@ package com.benonshi.builder;
  * @date 2020/7/8 19:27
  */
 public interface AirShipBuilder {
-    Engine builderEngine();
 
-    OrbitalModule builderOrbitalModule();
+    AirShipBuilder builderEngine();
 
-    EscapeTower builderEscapeTower();
+    AirShipBuilder builderOrbitalModule();
+
+    AirShipBuilder builderEscapeTower();
 
     AirShip build();
 

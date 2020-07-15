@@ -14,6 +14,10 @@ public class ChangeDirectorAirShip implements DirectorAirShip {
 
     @Override
     public AirShip directorAirShip() {
-        return builder.build();
+        return builder
+                .builderEngine()
+                .builderEscapeTower()
+                .builderOrbitalModule()
+                .build();
     }
 }

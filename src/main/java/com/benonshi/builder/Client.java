@@ -7,7 +7,11 @@ package com.benonshi.builder;
 public class Client {
 
     public static void main(String[] args) {
-        DirectorAirShip changeDirectorAirShip = new ChangeDirectorAirShip(new ChangeAirShipBuilder());
-        AirShip airShip = changeDirectorAirShip.directorAirShip();
+        DirectorAirShip changeDirectorAirShip = new ChangeDirectorAirShip(new ChangeAirShipBuilder(new AirShip()));
+        AirShip changeAirShip = changeDirectorAirShip.directorAirShip();
+        System.out.println(changeAirShip.getOrbitalModule().getName());
+        DirectorAirShip apolloDirectorAirShip = new ApolloDirectorAirShip(new ApolloAirShipBuilder(new AirShip()));
+        AirShip apolloAirShip = apolloDirectorAirShip.directorAirShip();
+        System.out.println(apolloAirShip.getOrbitalModule().getName());
     }
 }
