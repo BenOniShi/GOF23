@@ -6,7 +6,15 @@ package com.benonshi.decorator;
  * @author BenOniShi
  * @date 2020/7/16 23:46
  */
-public class Milk extends Condiment {
+public class Milk extends AbstractCondiment {
 
 
+    public Milk(AbstractBeverage beverage) {
+        super(beverage);
+    }
+
+    @Override
+    public int cost() {
+        return this.beverage.cost() + 2;
+    }
 }

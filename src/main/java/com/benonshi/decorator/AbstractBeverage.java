@@ -8,4 +8,8 @@ package com.benonshi.decorator;
  */
 public abstract class AbstractBeverage {
 
+    protected int price = 1;
+
+    abstract public int cost();
+
 }
