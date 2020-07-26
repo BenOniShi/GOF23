@@ -25,5 +25,10 @@ public class EagerSingleton {
         return eager;
     }
 
+    public static void main(String[] args) {
+        System.out.println(EagerSingleton.eager);
+        System.out.println((char)65);
+    }
+
 
 }

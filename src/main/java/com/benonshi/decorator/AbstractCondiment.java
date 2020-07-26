@@ -8,6 +8,7 @@ package com.benonshi.decorator;
  */
 public abstract class AbstractCondiment extends AbstractBeverage {
 
+
     protected AbstractBeverage beverage;
 
     public AbstractCondiment(AbstractBeverage beverage) {

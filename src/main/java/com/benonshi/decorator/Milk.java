@@ -8,7 +8,6 @@ package com.benonshi.decorator;
  */
 public class Milk extends AbstractCondiment {
 
-
     public Milk(AbstractBeverage beverage) {
         super(beverage);
     }
