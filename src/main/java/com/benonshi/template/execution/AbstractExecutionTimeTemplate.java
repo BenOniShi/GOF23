@@ -1,4 +1,4 @@
-package com.benonshi.template;
+package com.benonshi.template.execution;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -8,7 +8,7 @@ import java.util.List;
  * @author BenOniShi
  * @date 2020/7/23 17:33
  */
-public abstract class ExecutionTimeTemplate {
+public abstract class AbstractExecutionTimeTemplate {
 
     public void template() {
         System.out.println("开始---------");
@@ -22,7 +22,7 @@ public abstract class ExecutionTimeTemplate {
     protected abstract void code();
 }
 
-class A extends ExecutionTimeTemplate {
+class A extends AbstractExecutionTimeTemplate {
 
     @Override
     protected void code() {
@@ -38,7 +38,7 @@ class A extends ExecutionTimeTemplate {
     }
 }
 
-class B extends ExecutionTimeTemplate {
+class B extends AbstractExecutionTimeTemplate {
 
     @Override
     protected void code() {
