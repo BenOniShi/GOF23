@@ -6,13 +6,9 @@ import java.util.Arrays;
  * @author BenOniShi
  * @date 2020/8/4 1:29
  */
-public class Processor {
-    public String name() {
-        return this.getClass().getSimpleName();
-    }
+public interface Processor {
+    public String name();
 
-    Object process(Object input) {
-        return input;
-    }
+    public Object process(Object input);
 }
 
