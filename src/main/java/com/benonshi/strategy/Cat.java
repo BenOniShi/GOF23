@@ -14,8 +14,8 @@ public class Cat implements Comparable<Cat> {
 
     @Override
     public int compareTo(Cat o) {
-        if (this.weight < o.weight) return -1;
-        else if (this.weight > o.weight) return 1;
+        if (this.weight < o.weight) return 1;
+        else if (this.weight > o.weight) return -1;
         return 0;
     }
 }
