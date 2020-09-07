@@ -1,5 +1,8 @@
 package com.benonshi.adapter;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * @author BenOniShi
  * @date 2020/8/4 1:37
@@ -27,5 +30,8 @@ public class Apply {
         process(new FilterAdapter(highPass), waveform);
         LowPass lowPass = new LowPass(2);
         process(new FilterAdapter(lowPass), waveform);
+
+        double var = 5000000;
+        System.out.println(var / 10000);
     }
 }

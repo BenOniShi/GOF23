@@ -1,6 +1,8 @@
 package com.benonshi.prototype;
 
 import java.io.IOException;
+import java.util.Calendar;
+
 
 /**
  * @author BenOniShi
@@ -20,6 +22,5 @@ public class Client {
         System.out.println(clone1.getFriend());
         System.out.println(clone2.getFriend());
         System.out.println(clone3.getFriend());
-
     }
 }
