@@ -14,9 +14,9 @@ public class CountAdd {
 
     static final LongAdder longAdder = new LongAdder();
 
-    private Lock lock = new ReentrantLock();
+    private Lock lock = new BenOniShiLock();
 
-    private volatile static int count = 0;
+    private  static int count = 0;
 
     public  void add() {
         lock.lock();
@@ -47,12 +47,6 @@ public class CountAdd {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }
-        try {
-            System.out.println(Thread.currentThread().getName());
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
         System.out.println(count);
         System.out.println(longAdder.sum());
