@@ -1,4 +1,4 @@
-package com.benonshi.observer;
+package com.benonshi.observer.weather;
 
 import java.util.List;
 
