@@ -1,9 +1,10 @@
-package com.benonshi.observer;
+package com.benonshi.observer.weather;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 目标主题
  * @Author: BenOnSHI
  * @Date: 2020/7/26 12:03
  **/
@@ -41,7 +42,13 @@ public class WeatherData implements ISubject {
     public void measurementsChanged() {
         this.notifyObservers();
     }
-
+    /**
+     * describe: 设置测量参数  并通知
+     * @Param: [temperature, humidity, pressure, forecastTemperatures]
+     * @Return: void
+     * @Author: BenOnSHI
+     * @Date: 2020/9/25 12:29
+     */
     public void setMeasurements(float temperature, float humidity,
                                 float pressure, List<Float> forecastTemperatures) {
         this.temperature = temperature;

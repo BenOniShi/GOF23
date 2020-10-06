@@ -1,6 +1,7 @@
-package com.benonshi.observer;
+package com.benonshi.observer.weather;
 
 /**
+ * 抽象主题
  * @Author: BenOnSHI
  * @Date: 2020/7/26 12:01
  **/

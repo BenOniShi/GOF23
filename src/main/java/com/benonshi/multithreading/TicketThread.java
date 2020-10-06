@@ -33,7 +33,7 @@ public class TicketThread implements Runnable {
             this.notifyAll();
             this.ticket--;
             System.out.println(Thread.currentThread().getName() + "正在卖票,当前还有【" + this.ticket + "】张票");
-            this.wait(1000);
+            this.wait();
         }
     }
     }
@@ -44,7 +44,7 @@ class Purchase {
         TicketThread ticketThread = new TicketThread();
         new Thread(ticketThread, "1售票员").start();
         new Thread(ticketThread, "2售票员").start();
-        new Thread(ticketThread, "3售票员").start();
+
 
 
     }
