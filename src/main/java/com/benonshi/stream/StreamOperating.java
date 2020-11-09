@@ -1,7 +1,11 @@
 package com.benonshi.stream;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @author BenOniShi
@@ -13,18 +17,23 @@ public class StreamOperating {
 
     static {
         empList.add(new Emp("人造人1号", 20, 1000.0));
-        empList.add(new Emp("人造人2号", 25, 2000.0));
+        empList.add(new Emp("人造人2号", 20, 2000.0));
         empList.add(new Emp("人造人3号", 30, 3000.0));
-        empList.add(new Emp("人造人4号", 35, 4000.0));
+        empList.add(new Emp("人造人4号", 30, 4000.0));
         empList.add(new Emp("人造人5号", 38, 5000.0));
         empList.add(new Emp("人造人6号", 45, 9000.0));
         empList.add(new Emp("人造人7号", 55, 10000.0));
-        empList.add(new Emp("人造人8号", 42, 15000.0));
+        empList.add(new Emp("人造人8号", 55, 15000.0));
         empList.add(new Emp("人造人9号", 56, 20000.0));
         empList.add(new Emp("人造人10号", 86, 500.0));
 
     }
 
+
+    static <T> Predicate<T> distinctByKey(Function<? super T, ?> keyExtractor) {
+        Map<Object,Boolean> seen = new ConcurrentHashMap<>();
+        return t -> seen.putIfAbsent(keyExtractor.apply(t), Boolean.TRUE) == null;
+    }
 
     public static void main(String[] args) {
         // false
@@ -33,6 +42,12 @@ public class StreamOperating {
         // true
         boolean b = empList.stream().mapToInt(Emp::getAge).anyMatch(value -> value > 25);
         System.out.println("该集合中有年龄大于25的人吗？" + b);
+
+
+        List<Emp> collect3 = empList.stream().filter(distinctByKey(Emp::getAge)).sorted(Comparator.comparing(Emp::getAge)).collect(Collectors.toList());
+        collect3.forEach(System.out::println);
+
+
         // 获取 薪水大于 5000 的员工
         List<Emp> collect = empList.stream().filter(emp -> emp.getSalary() > 5000).collect(Collectors.toList());
         collect.forEach(System.out::println);
@@ -43,9 +58,11 @@ public class StreamOperating {
         list.add(0);
         list.add(0);
         list.add(1);
+        List<Integer> collect2 = list.stream().distinct().collect(Collectors.toList());
+        collect2.forEach(System.out::println);
         System.out.println("--------------");
         Map<Integer, List<Integer>> collect1 = list.stream().collect(Collectors.groupingBy(integer -> integer));
-        collect1.forEach((k,v) ->{
+        collect1.forEach((k, v) -> {
             System.out.println(k);
             System.out.println(v);
         });
