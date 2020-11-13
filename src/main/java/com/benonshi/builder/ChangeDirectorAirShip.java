@@ -1,6 +1,8 @@
 package com.benonshi.builder;
 
 /**
+ * 建造者模式
+ * 嫦娥飞船组建
  * @author BenOniShi
  * @date 2020/7/8 19:39
  */

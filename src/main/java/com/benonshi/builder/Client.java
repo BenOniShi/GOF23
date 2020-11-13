@@ -1,6 +1,8 @@
 package com.benonshi.builder;
 
 /**
+ * 建造者模式
+ * 客户端
  * @author BenOniShi
  * @date 2020/7/8 19:41
  */

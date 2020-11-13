@@ -1,7 +1,7 @@
 package com.benonshi.builder;
 
 /**
- * 宇宙飞船
+ * 宇宙飞船产品类
  *
  * @author BenOniShi
  * @date 2020/7/8 19:17
