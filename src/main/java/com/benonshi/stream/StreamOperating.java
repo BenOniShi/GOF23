@@ -50,6 +50,8 @@ public class StreamOperating {
 
         // 获取 薪水大于 5000 的员工
         List<Emp> collect = empList.stream().filter(emp -> emp.getSalary() > 5000).collect(Collectors.toList());
+        long count = empList.stream().map(Emp::getSalary).filter(x -> x > 5000).count();
+        System.out.println("薪水大于5000的员工有"+count+"个");
         collect.forEach(System.out::println);
         List<Integer> list = new ArrayList<>();
         list.add(0);
